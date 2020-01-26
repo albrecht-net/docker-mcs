@@ -15,5 +15,5 @@ EXPOSE $PORT
 WORKDIR /mc
 VOLUME /mc
 
-ENTRYPOINT ["/usr/bin/java", "-Xms$INIT_MEM", "-Xmx$MAX_MEM", "-jar", "$SERVER_JAR", "nogui"]
+ENTRYPOINT java -Xms$INIT_MEM -Xmx$MAX_MEM -jar $SERVER_JAR nogui
 # CMD exec java "-Xms$INIT_MEM" "-Xmx$MAX_MEM" -jar "$SERVER_JAR" nogui
