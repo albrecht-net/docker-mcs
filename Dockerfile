@@ -2,15 +2,14 @@ FROM alpine:3.11.3
 
 MAINTAINER albrecht-net
 
-ENV UID=1 \
-    GID=1 \
+ENV USER=root \
     INIT_MEM=1G \
     MAX_MEM=4G \
     SERVER_JAR=minecraft_server.jar
 
 RUN apk add --no-cache openjdk8-jre
 
-USER minecraft
+USER $USER
 
 EXPOSE 25565
 
